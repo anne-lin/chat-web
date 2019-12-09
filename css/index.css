@@ -22,12 +22,14 @@ button {
   margin: 150px auto;
   padding: 20px;
   width: 300px;
-  height: 195px;
+  height: 210px;
   border: 1px solid black;
   border-radius: 5px; }
   .login-box div:first-of-type {
     margin: 20px 0;
     font-size: 15px; }
+  .login-box #res {
+    text-indent: 70px; }
   .login-box button {
     width: 50px;
     height: 30px;

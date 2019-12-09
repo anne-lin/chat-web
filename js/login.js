@@ -28,43 +28,19 @@ $("#login-btn").click(async ()=>{
             }
         });
         let res=await result.json();
-        console.log("res:",res);
-        if(res.code == "0"){
-                if($(".title").html() == "登录"){
-                    console.log(res);
-                    //location.href="http://localhost:8083/node2/chat-system/static/chat.html"
-                }else {
-                    alert(res.desc);
-                    $(".title").html("登录");
-                    $("#login-btn").html("登录");
-                    $("#changeModel").html("注册");
-                }
-            }else {
-                alert(res.desc);
-            }
-    }catch (e) {
-       console.log("error:",e);
-    }
-   /* $.ajax({
-        url: url,
-        method:"post",
-        data: data,
-        dataType: 'json'
-    }).then(res=>{
-        console.log("res:",res);
-        if(res.code == "0"){
+        if(result.ok){
             if($(".title").html() == "登录"){
-                // location.href="http://localhost:8083/node2/chat-system/static/chat.html"
+                location.href="http://localhost:8083/chat-web/html/chat.html"
             }else {
-                alert(res.desc);
+                $("#res").html(`<p style="color:red">${res.desc}</p>`);
                 $(".title").html("登录");
                 $("#login-btn").html("登录");
                 $("#changeModel").html("注册");
             }
         }else {
-            alert(res.desc);
+            $("#res").html(`<p style="color:red">${res.msg}</p>`);
         }
-    },err=>{
-        console.log("获取数据出错");
-    })*/
+    }catch (e) {
+       console.log("error:",e);
+    }
 });
