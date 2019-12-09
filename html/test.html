@@ -5,24 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="http://open.ccod.com:20000/WA/WA.js"></script>
 </head>
-<body>
-
-<script>
-    WA.init({
-        ui: false,
-        //useLocal: false,
-        telVisible: false,
-        callback: function () {
-            console.log('callback');
-            WA.registerEventHandler(function (data) {
-                if (data.type == 'EVENT_WEBAGENT_LOGIN') {
-                    console.log('[demo]-登录成功');
-                }
-            })
-        }
-    })
-</script>
+<body style="height: 700px">
+<div class="flex">
+    <div  style="width: 100px;height: 100px;background-color:red;align-self: center">
+        div
+    </div>
+</div>
+<div>
+    <div class="transform" style="width: 100px;height: 100px;background-color:red">
+        div
+    </div>
+</div>
+<style>
+    .flex{
+/*
+        height: 100%;
+*/
+        display: flex;
+       /* justify-content: center;
+        align-items: center;*/
+    }
+    .transform{
+        position: absolute;
+        left: 50%;
+        top:50%;
+        transform: translate(-50%,-50%); //相对于元素本身的高度
+    }
+</style>
 </body>
 </html>
